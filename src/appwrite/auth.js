@@ -52,16 +52,16 @@ export class AuthService {
     }
   }
   // getUser
-  async getUser(){
+  async getUser() {
     try {
-        const user = await this.account.get()
+      const user = await this.account.get();
+      return user
     } catch (error) {
-        console.log("Appwrite Service Error in :: getUser :: error",error)
-        throw 
+      console.log("Appwrite Service Error in :: getUser :: error", error);
+      throw error;
     }
-    return null
+    return null;
   }
-
 }
 const authService = new AuthService();
 export default authService;
