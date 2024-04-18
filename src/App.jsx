@@ -3,6 +3,9 @@ import "./App.css";
 import { useDispatch } from "react-redux";
 import authService from "./appwrite/auth";
 import { login, logout } from "./store/authSlice";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -23,7 +26,14 @@ function App() {
 
   // conditional rendering
   return !loading ? (
-    <div className="text-red-700 font-bold ">Hello</div>
+    <div className="text-red-700 font-bold ">
+      Hello
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
   ) : null;
 }
 
