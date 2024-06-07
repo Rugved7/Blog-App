@@ -4,6 +4,7 @@ import { Client, Account, ID } from "appwrite";
 export class AuthService {
   client = new Client();
   account;
+
   constructor() {
     this.client
       .setEndpoint(conf.appwriteURL)
@@ -20,7 +21,7 @@ export class AuthService {
         name
       );
       if (userAccount) {
-        // Calling Another method ---> ie directly allow user to login after successfull registering by calling userLogin func
+        // Calling Another method ---> it directly allows user to login after successfull registering by calling userLogin func
         this.login(email, password);
       } else {
         return userAccount;
@@ -60,5 +61,6 @@ export class AuthService {
     return null;
   }
 }
+
 const authService = new AuthService();
 export default authService;

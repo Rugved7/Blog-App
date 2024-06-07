@@ -12,7 +12,8 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    authService.getCurrentUser()
+    authService
+      .getCurrentUser()
       .then((userData) => {
         if (userData) {
           dispatch(login({ userData }));
@@ -20,18 +21,20 @@ function App() {
           dispatch(logout());
         }
       })
-      .finally(() => setLoading(false));
+      .finally(setLoading(false));
   }, []);
 
   // conditional rendering
   return !loading ? (
-    <div className="text-red-700 font-bold ">
-      Hello
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
+    <div className="min-h-screen flex flex-wrap content-between bg-gray-500">
+      <div className="w-full block">
+        Hello
+        <Header />
+        <main>
+          {/* <Outlet /> */}
+        </main>
+        <Footer />
+      </div>
     </div>
   ) : null;
 }

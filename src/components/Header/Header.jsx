@@ -1,14 +1,9 @@
-import React from "react";
-import { Logo, LogoutBtn, container } from "../index";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import React from 'react'
 
 const Header = () => {
-  const authStatus = useSelector((state) => state.auth.status);
-  const navigate = useNavigate();
-  return <div>Hello</div>;
-};
+  return (
+    <div>Header</div>
+  )
+}
 
-export default Header;
- 
+export default Header
