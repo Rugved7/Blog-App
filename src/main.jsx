@@ -11,7 +11,7 @@ import EditPost from "./pages/EditPost";
 import Post from "./pages/Post";
 import AddPost from "./pages/AddPost.jsx";
 import AllPosts from "./pages/AllPosts.jsx";
-import { ProtectedRoute, Login, Signup } from "./components/index.js";
+import { ProtectedRoute, Login } from "./components/index.js";
 
 // Routing
 const router = createBrowserRouter([

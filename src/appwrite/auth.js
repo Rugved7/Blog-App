@@ -34,18 +34,11 @@ export class AuthService {
   //   login method
   async login({ email, password }) {
     try {
-      const userLogin = await this.account.createEmailSession(email, password);
+      const userLogin = await this.account.createEmailPasswordSession(
+        email,
+        password
+      );
       return userLogin;
-    } catch (error) {
-      console.log(error);
-      throw error;
-    }
-  }
-  //   logout method
-  async logout() {
-    try {
-      const logoutUser = await this.account.deleteSessions();
-      return logoutUser;
     } catch (error) {
       console.log(error);
       throw error;
@@ -56,9 +49,23 @@ export class AuthService {
     try {
       return await this.account.get();
     } catch (error) {
-      console.log("Appwrite Service Error in :: getUser :: error", error);
+      console.log(
+        "Appwrite Service Error in :: getCurrentUser :: error",
+        error
+      );
     }
     return null;
+  }
+
+  //   logout method
+  async logout() {
+    try {
+      const logoutUser = await this.account.deleteSessions();
+      return logoutUser;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
   }
 }
 

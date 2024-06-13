@@ -10,12 +10,12 @@ import { useForm } from "react-hook-form";
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // React form syntax
   const { register, handleSubmit } = useForm();
   const [error, setError] = useState("");
 
   // login method
   const login = async (data) => {
+    setError("");
     try {
       const session = await authService.login(data);
       if (session) {
@@ -39,7 +39,7 @@ const Login = () => {
           </span>
         </div>
         <h2 className="text-center text-2xl font-bold leading-tight">
-          Sign in to your account
+          Log in to your account
         </h2>
         <p className="mt-2 text-center text-base text-black/60">
           Don&apos;t have an account?&nbsp;
