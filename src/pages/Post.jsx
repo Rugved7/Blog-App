@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+<<<<<<< HEAD
 import databaseService from "../appwrite/config";
 import { Button, Container } from "../components/index";
+=======
+import appwriteService from "../appwrite/config";
+import { Button, Container } from "../components";
+>>>>>>> 2a902b2 (Completed the work)
 import parse from "html-react-parser";
 import { useSelector } from "react-redux";
 
@@ -16,7 +21,11 @@ export default function Post() {
 
     useEffect(() => {
         if (slug) {
+<<<<<<< HEAD
             databaseService.getPost(slug).then((post) => {
+=======
+            appwriteService.getPost(slug).then((post) => {
+>>>>>>> 2a902b2 (Completed the work)
                 if (post) setPost(post);
                 else navigate("/");
             });
@@ -24,9 +33,15 @@ export default function Post() {
     }, [slug, navigate]);
 
     const deletePost = () => {
+<<<<<<< HEAD
         databaseService.deletePost(post.$id).then((status) => {
             if (status) {
                 databaseService.deleteFile(post.featuredImage);
+=======
+        appwriteService.deletePost(post.$id).then((status) => {
+            if (status) {
+                appwriteService.deleteFile(post.featuredImage);
+>>>>>>> 2a902b2 (Completed the work)
                 navigate("/");
             }
         });
@@ -37,7 +52,11 @@ export default function Post() {
             <Container>
                 <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
                     <img
+<<<<<<< HEAD
                         src={databaseService.getFilePreview(post.featuredImage)}
+=======
+                        src={appwriteService.getFilePreview(post.featuredImage)}
+>>>>>>> 2a902b2 (Completed the work)
                         alt={post.title}
                         className="rounded-xl"
                     />
@@ -64,4 +83,8 @@ export default function Post() {
             </Container>
         </div>
     ) : null;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 2a902b2 (Completed the work)

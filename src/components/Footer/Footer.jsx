@@ -14,7 +14,11 @@ function Footer() {
               </div>
               <div>
                 <p className="text-sm text-gray-600">
+<<<<<<< HEAD
                   &copy; Copyright 2023. All Rights Reserved by DevUI.
+=======
+                  Copyright © 2024. All Rights Reserved by Rugved.
+>>>>>>> 2a902b2 (Completed the work)
                 </p>
               </div>
             </div>
