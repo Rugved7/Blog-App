@@ -1,55 +1,17 @@
-import React from "react";
-import { Editor } from "@tinymce/tinymce-react";
-import { Controller } from "react-hook-form";
-<<<<<<< HEAD
-
-const RTE = ({ name, control, label, defaultValue = "" }) => {
-=======
-import conf from "../conf/conf";
+import React from 'react';
+import { Editor } from '@tinymce/tinymce-react';
+import { Controller } from 'react-hook-form';
 
 export default function RTE({ name, control, label, defaultValue = "" }) {
-  const apiKey = conf.tinyMCEId;
->>>>>>> 2a902b2 (Completed the work)
+  const apiKey = conf.TINYMCEID
+
   return (
-    <div className="w-full">
-      {label && <label className="inline-block mb-1 pl-1">{label}</label>}
+    <div className='w-full'>
+      {label && <label className='inline-block mb-1 pl-1'>{label}</label>}
 
       <Controller
         name={name || "content"}
         control={control}
-<<<<<<< HEAD
-        render={({ field: { onChange } }) => (
-          <Editor
-            initialValue={defaultValue}
-            init={{
-              initialValue: defaultValue,
-              height: 500,
-              menubar: true,
-              plugins: [
-                "image",
-                "advlist",
-                "autolink",
-                "lists",
-                "link",
-                "image",
-                "charmap",
-                "preview",
-                "anchor",
-                "searchreplace",
-                "visualblocks",
-                "code",
-                "fullscreen",
-                "insertdatetime",
-                "media",
-                "table",
-                "code",
-                "help",
-                "wordcount",
-                "anchor",
-              ],
-              toolbar:
-                "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |removeformat | help",
-=======
         defaultValue={defaultValue}
         render={({ field: { onChange, value } }) => (
           <Editor
@@ -62,15 +24,13 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
               plugins: [
                 "advlist autolink lists link image charmap print preview anchor",
                 "searchreplace visualblocks code fullscreen",
-                "insertdatetime media table paste code help wordcount",
+                "insertdatetime media table paste code help wordcount"
               ],
-              toolbar:
+              toolbar: 
                 "undo redo | formatselect | bold italic backcolor | \
                 alignleft aligncenter alignright alignjustify | \
                 bullist numlist outdent indent | removeformat | help",
->>>>>>> 2a902b2 (Completed the work)
-              content_style:
-                "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+              content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }"
             }}
             onEditorChange={onChange}
           />
@@ -78,10 +38,4 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
       />
     </div>
   );
-<<<<<<< HEAD
-};
-
-export default RTE;
-=======
 }
->>>>>>> 2a902b2 (Completed the work)
