@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
-import "./App.css";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import "./App.css";
 import authService from "./appwrite/auth";
 import { login, logout } from "./store/authSlice";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import { Footer, Header } from "./components";
 import { Outlet } from "react-router-dom";
 
 function App() {
@@ -21,12 +20,11 @@ function App() {
           dispatch(logout());
         }
       })
-      .finally(setLoading(false));
+      .finally(() => setLoading(false));
   }, []);
 
-  // conditional rendering
   return !loading ? (
-    <div className="min-h-screen flex flex-wrap content-between bg-gray-500">
+    <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
       <div className="w-full block">
         <Header />
         <main>

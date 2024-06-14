@@ -1,31 +1,30 @@
+import Select from "./Select";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
-import Container from "./container/container";
-import LogoutBtn from "../components/Header/LogoutBtn";
+import Container from "./container/Container";
 import Logo from "./Logo";
-import Button from "./Button";
-import Input from "./Input";
+import LogoutBtn from "./Header/LogoutBtn";
 import RTE from "./RTE";
-import select from "./select";
 import Signup from "./Signup";
 import Login from "./Login";
+import Button from "./Button";
 import PostForm from "./post-form/PostForm";
 import PostCard from "./PostCard";
-import ProtectedRoute from "./AuthLayout";
-
+import AuthLayout from "./AuthLayout";
+import Input from "./Input";
 export {
-  select,
   Header,
-  Input,
   Footer,
   Container,
-  LogoutBtn,
   Logo,
-  Button,
+  LogoutBtn,
   RTE,
   Signup,
   Login,
-  PostCard,
+  Button,
   PostForm,
-  ProtectedRoute,
+  PostCard,
+  AuthLayout,
+  Input,
+  Select,
 };
